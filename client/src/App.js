@@ -20,7 +20,7 @@ function App() {
               }}>2359 Chat Bot</button>
           </div>
         </div>
-        <iframe src="https://www.revolut.com/help" style={{border:'solid 1px #777', height: '100vh'}} width="100%" frameborder="0"></iframe>
+        <iframe src="https://www.revolut.com/help" style={{border:'solid 1px #777', height: '100vh'}} width="100%" frameBorder="0"></iframe>
       </header>
     </div>
   );
