@@ -5,18 +5,22 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div style={{position: 'relative'}}>
+          <div style={{position: 'fixed', bottom: 25, right: 25}}>
+            <button 
+              onClick={() => alert('Open Chat Bot')}
+              style={{
+                fontSize: '1em', 
+                color: '#ffffff',
+                padding: '4px 16px',
+                borderRadius: '25px', 
+                outline: 'none', 
+                backgroundColor: '#4285F4',
+                border: '2px solid #000000',
+              }}>2359 Chat Bot</button>
+          </div>
+        </div>
+        <iframe src="https://www.revolut.com/help" style={{border:'solid 1px #777', height: '100vh'}} width="100%" frameborder="0"></iframe>
       </header>
     </div>
   );
