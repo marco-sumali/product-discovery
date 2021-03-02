@@ -5,7 +5,7 @@ const admin = require('firebase-admin');
 admin.initializeApp()
 // Node fetch initialisation
 const fetch = require('node-fetch');
-const DOMParser = require('dom-parser');
+const cors = require('cors')({origin: true});
 
 // Create and Deploy Your First Cloud Functions
 // https://firebase.google.com/docs/functions/write-firebase-functions
@@ -14,11 +14,15 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 });
 
 exports.nodeFetch = functions.https.onRequest((req, res) => {
-  fetch('https://www.revolut.com/help')
-    .then(data => data.text())
-    .then(text => {
-      res.send({strHtml: text})
-    });
+  cors(req, res, () => {
+    // your function body here - use the provided req and res from cors
+    fetch('https://www.revolut.com/help')
+      .then(data => data.text())
+      .then(text => {
+        res.status(200).send({strHtml: text})
+      })
+      .catch(err => console.log('ERROR:', err))
+  })
 });
 
 
