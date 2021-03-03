@@ -14,15 +14,11 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 });
 
 exports.nodeFetch = functions.https.onRequest((req, res) => {
-  cors(req, res, () => {
-    // your function body here - use the provided req and res from cors
-    fetch('https://www.revolut.com/help')
-      .then(data => data.text())
-      .then(text => {
-        res.status(200).send({strHtml: text})
-      })
-      .catch(err => console.log('ERROR:', err))
-  })
+  cors(req, res, () => {})
+  fetch('https://www.revolut.com/help')
+    .then(data => data.text())
+    .then(text => res.status(200).send({strHtml: text}))
+    .catch(err => console.log('ERROR:', err))
 });
 
 
