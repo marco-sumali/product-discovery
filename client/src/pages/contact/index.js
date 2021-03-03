@@ -1,8 +1,12 @@
 import React from 'react';
 
+import NavigationBar from '../../components/header';
+
 const ContactUsPage = () => {
   return (
-    <div>Contact Us Page Ya</div>
+    <NavigationBar>
+      <div>Contact Us Page Ya</div>
+    </NavigationBar>
   )
 };
 
