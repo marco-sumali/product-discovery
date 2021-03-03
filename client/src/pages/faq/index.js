@@ -16,7 +16,7 @@ import {FAQDetails} from './constant';
 export default function FAQPage() {
   return (
     <NavigationBar>
-      <Grid container>
+      <Grid container style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
         <Grid item xs={12}>
           <div style={styles.Container}>
             <Container>
