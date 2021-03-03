@@ -50,6 +50,17 @@ const AccordionSubTitle = {
   fontSize: '1em',
 }
 
+const Button = {
+  borderRadius: '50%',
+  border: '2px solid rgb(139, 149, 158)',
+  padding: '8px',
+  position: 'fixed',
+  bottom: '25px',
+  right: '25px',
+  zIndex: '30',
+  backgroundColor: '#ffffff'
+}
+
 const styles = {
   Container,
   Header,
@@ -60,6 +71,7 @@ const styles = {
   BodySubTitle,
   AccordionTitle,
   AccordionSubTitle,
+  Button,
 }
 
 export default styles;

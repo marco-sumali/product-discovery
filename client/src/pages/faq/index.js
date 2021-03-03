@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {  
   Box,
   Container,
@@ -6,17 +6,20 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  IconButton,
 } from '@material-ui/core'; 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {v4 as uuidv4} from 'uuid';
+import ChatIcon from '@material-ui/icons/Chat';
 
 import NavigationBar from '../../components/header';
 import styles from './style.js';
 import {FAQDetails} from './constant';
-
 import firebase from '../../config/firebase';
 
 export default function FAQPage() {
+  const [isConnected, setIsConnected] = useState(false)
+
   useEffect(() => {
     const createSession = async () => {
       const id = uuidv4()
@@ -29,14 +32,24 @@ export default function FAQPage() {
         updated_at: new Date(),
       }).then(() => console.log('Successful session'))
     }
-
-    createSession()
+    
+    setTimeout(() => {
+      createSession()
+      setIsConnected(prev => !prev)
+    }, 5000)
   }, [])
 
   return (
     <NavigationBar>
       <Grid container style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
         <Grid item xs={12}>
+          {isConnected? 
+            <div style={styles.Button} onClick={() => window.location.href = 'https://articulo-voice-bot.web.app'}>
+              <IconButton color="primary" style={{color: '#000000'}}>
+                <ChatIcon />
+              </IconButton>
+            </div>
+          : null}
           <div style={styles.Container}>
             <Container>
               <Box my={3}>

@@ -44,6 +44,7 @@ const Button = {
   borderRadius: '50%',
   border: '2px solid rgb(139, 149, 158)',
   padding: '8px',
+  backgroundColor: '#ffffff'
 }
 
 const style = {
