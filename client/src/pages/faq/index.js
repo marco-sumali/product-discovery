@@ -20,16 +20,14 @@ export default function FAQPage() {
   useEffect(() => {
     const createSession = async () => {
       const id = uuidv4()
-      const res = await firebase.firestore().collection("sessions").doc(id).set({
+      const db = firebase.firestore();
+      db.collection("sessions").doc(id).set({
         id: uuidv4(),
         live_agent_id: uuidv4(),
         responses: [],
         created_at: new Date(),
         updated_at: new Date(),
-      });
-      console.log('FB response:', res)
-
-      return res
+      }).then(() => console.log('Successful session'))
     }
 
     createSession()
