@@ -31,7 +31,23 @@ const Accordion = {
 const BodyTitle = {
   fontWeight: 'bold',
   fontSize: '2.5rem',
-  margin: '0.5em 0px'
+  margin: '0.25em 0px'
+}
+
+const BodySubTitle = {
+  fontWeight: 'bold',
+  fontSize: '1.5rem',
+  margin: '0.5em 0px',
+  color: 'rgb(139, 149, 158)',
+}
+
+const AccordionTitle = {
+  fontWeight: '500',
+  fontSize: '1.25em',
+}
+
+const AccordionSubTitle = {
+  fontSize: '1em',
 }
 
 const styles = {
@@ -41,6 +57,9 @@ const styles = {
   BodyContainer,
   BodyTitle,
   Accordion,
+  BodySubTitle,
+  AccordionTitle,
+  AccordionSubTitle,
 }
 
 export default styles;

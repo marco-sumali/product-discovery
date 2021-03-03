@@ -6,12 +6,12 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Typography
 } from '@material-ui/core'; 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import NavigationBar from '../../components/header';
 import styles from './style.js';
+import {FAQDetails} from './constant';
 
 export default function FAQPage() {
   return (
@@ -34,37 +34,38 @@ export default function FAQPage() {
             <Container>
               <Box my={3}>
                 <Grid item xs={12}>
-                  <div style={styles.BodyTitle}>Adding Money</div>
-                  <Accordion style={styles.Accordion}>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography>Accordion 1</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                        sit amet blandit leo lobortis eget.
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
-                  <Accordion style={styles.Accordion}>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
-                      <Typography>Accordion 2</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-                        sit amet blandit leo lobortis eget.
-                      </Typography>
-                    </AccordionDetails>
-                  </Accordion>
+                  {
+                    FAQDetails.map((faq, index) => (
+                      <div key={`FAQ-${index}`}>
+                        <div style={styles.BodyTitle}>{faq.title}</div>
+                        {
+                          faq.data.map((subFaq, index) => (
+                            <div key={`SubFAQ-${index}`}>
+                              <div style={styles.BodySubTitle}>{subFaq.subtitle}</div>
+                              <div>
+                                {
+                                  subFaq.data.map((detail, index) => (
+                                    <Accordion style={styles.Accordion} key={`Detail-${index}`}>
+                                      <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel1a-content"
+                                        id="panel1a-header"
+                                      >
+                                        <div style={styles.AccordionTitle}>{detail.question}</div>
+                                      </AccordionSummary>
+                                      <AccordionDetails>
+                                        <div style={styles.AccordionSubTitle}>{detail.answer}</div>
+                                      </AccordionDetails>
+                                    </Accordion>
+                                  ))
+                                }
+                              </div>
+                            </div>
+                          ))
+                        }
+                      </div>
+                    ))
+                  }
                 </Grid>
               </Box>
             </Container>
