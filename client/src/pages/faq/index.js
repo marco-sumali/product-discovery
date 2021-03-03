@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {  
   Box,
   Container,
@@ -8,12 +8,33 @@ import {
   AccordionDetails,
 } from '@material-ui/core'; 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import {v4 as uuidv4} from 'uuid';
 
 import NavigationBar from '../../components/header';
 import styles from './style.js';
 import {FAQDetails} from './constant';
 
+import firebase from '../../config/firebase';
+
 export default function FAQPage() {
+  useEffect(() => {
+    const createSession = async () => {
+      const id = uuidv4()
+      const res = await firebase.firestore().collection("sessions").doc(id).set({
+        id: uuidv4(),
+        live_agent_id: uuidv4(),
+        responses: [],
+        created_at: new Date(),
+        updated_at: new Date(),
+      });
+      console.log('FB response:', res)
+
+      return res
+    }
+
+    createSession()
+  }, [])
+
   return (
     <NavigationBar>
       <Grid container style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
