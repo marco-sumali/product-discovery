@@ -141,7 +141,7 @@ export const FAQDetails = [
         data: [
           {
             question: `How do I dispute a Pay with Revolut transaction?`,
-            answer: `If you are dissatisfied with the product or service provided by the merchant, you can begin the process to dispute a transaction. To do this, please chat to us via our chat bot and state that you want to raise a Pay with Revolut claim.`,
+            answer: `If you are dissatisfied with the product or service provided by the merchant, you can begin the process to dispute a transaction. To do this, you will need to raise a Pay claim with us, where we will be required to undergo an investigation into the transaction.`,
           }
         ]
       },
@@ -150,7 +150,7 @@ export const FAQDetails = [
         data: [
           {
             question: `I don’t recognise a Direct Debit payment`,
-            answer: `If you wish to dispute a EUR Direct Debit transaction, you have the right to request an immediate refund within 8 weeks from the date your account was debited. If the mandate relating to the EUR Direct Debit transaction has not been authorised by you, you can request a refund up to 13 months after the date your account was debited. If you want to do this, please chat to us via our chat bot to do so.`,
+            answer: `If you wish to dispute a EUR Direct Debit transaction, you have the right to request an immediate refund within 8 weeks from the date your account was debited. If the mandate relating to the EUR Direct Debit transaction has not been authorised by you, you can request a refund up to 13 months after the date your account was debited. `,
           }
         ]
       },
@@ -159,7 +159,7 @@ export const FAQDetails = [
         data: [
           {
             question: `I don't recognise a card payment`,
-            answer: `If you've lost your card or are  concerned that your card has been compromised, please chat to us via our chatbot to freeze your card and prevent any unauthorised payments. We will then assist you to complete a dispute investigation.`,
+            answer: `If you've lost your card or are  concerned that your card has been compromised, please freeze your card and prevent any unauthorised payments. If you are looking to dispute a transaction, you will need to raise a Pay claim with us, where we will be required to undergo an investigation into the transaction.`,
           }
         ]
       },
@@ -291,7 +291,7 @@ export const FAQDetails = [
           {
             question: `I forgot my passcode`,
             answer: `If you have forgotten your passcode to access the Revolut app, tap on ‘Forgot?’ in the login page of the app and follow the simple instructions to reset your passcode.
-            To be able to reset your passcode, your mobile phone number registered to your account needs to be in use and active. If you have since changed your mobile phone number, but have not updated it in your account, please chat to us via our chat bot to do so.`,
+            Please note that to be able to reset your passcode, your mobile phone number registered to your account needs to be in use and active.`,
           },
           {
             question: `Why is my account locked?`,
@@ -300,7 +300,7 @@ export const FAQDetails = [
           },
           {
             question: `I need to edit my personal details`,
-            answer: `If you’re unable to access your app and need to update your mobile phone number, please chat to us via our chat bot to do so.`,
+            answer: `If you have not verified your account yet, you can edit your personal details in the Profile section of the app. Once your identity has been verified, you will be able to edit your home address, email address, and mobile phone number.`,
           },
         ]
       },
