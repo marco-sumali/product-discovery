@@ -141,7 +141,7 @@ export const FAQDetails = [
         data: [
           {
             question: `How do I dispute a Pay with Revolut transaction?`,
-            answer: `If you are dissatisfied with the product or service provided by the merchant, you can begin the process to dispute a transaction. To do this, please chat to us and state that you want to raise a Pay with Revolut claim.`,
+            answer: `If you are dissatisfied with the product or service provided by the merchant, you can begin the process to dispute a transaction. To do this, please chat to us via our chat bot and state that you want to raise a Pay with Revolut claim.`,
           }
         ]
       },
@@ -150,7 +150,7 @@ export const FAQDetails = [
         data: [
           {
             question: `I don’t recognise a Direct Debit payment`,
-            answer: `If you wish to dispute a EUR Direct Debit transaction, you have the right to request an immediate refund within 8 weeks from the date your account was debited. If the mandate relating to the EUR Direct Debit transaction has not been authorised by you, you can request a refund up to 13 months after the date your account was debited. If you want to do this, please chat to us.`,
+            answer: `If you wish to dispute a EUR Direct Debit transaction, you have the right to request an immediate refund within 8 weeks from the date your account was debited. If the mandate relating to the EUR Direct Debit transaction has not been authorised by you, you can request a refund up to 13 months after the date your account was debited. If you want to do this, please chat to us via our chat bot to do so.`,
           }
         ]
       },
@@ -159,23 +159,7 @@ export const FAQDetails = [
         data: [
           {
             question: `I don't recognise a card payment`,
-            answer: `If you're concerned that your card has been compromised, please freeze your card immediately in the app to prevent any unauthorised payments and check the following:
-            Did you make payments to this merchant in the past?
-            If you don't recognize the merchant’s name, please open the 'Transactions' list and search it there. This will show if there were any payments to this merchant in the past and should help you recall the merchant.
-            Have you ever provided your card details to this merchant?
-            If there were no previous payments to this merchant, try recalling if you ever provided your card details to them at any point.
-            For example, you linked the card as a payment method on a website, but never bought anything. Please contact the merchant to clarify the matter, this charge could be a mistake on their end.
-            Merchant's name and location might show differently
-            Sometimes the merchant's name shown in-app may not resemble their actual brand name. Also, the location doesn't have to be the actual place where the payment was made - it's often the merchant's headquarters.
-            The app shows only the information the merchant decided to provide. The details can be double-checked with a quick Google search.
-            Was the card used online or with a physical terminal? 
-            If you see that the card was used with a physical terminal and you have the card with you, the payment should have been done by you. Try recalling if you made a payment of a similar amount on that day.
-            For online payments, it's worth checking if somebody from your family or friends could have used your card details.
-            If you've made a payment with an offline POS terminal (such as on a flight or petrol station), it can occasionally take a few days or even weeks for these transactions to appear on your statement.
-            A merchant can also send a so-called 'delayed' payment, if for some reason they had trouble processing the transaction for the first time. In this case, the original payment may be reverted, and a 'delayed' payment charged instead.
-            If you still believe your card has been used fraudulently, please fill out our chargeback form so we can help with the issue.
-            If your card was lost or stolen, please report it as lost or stolen on the app or our website.
-            To dispute transactions made while the card was lost or stolen, please contact the local police and obtain a report before filling out our chargeback form. We'll need the police report to complete the chargeback process.`,
+            answer: `If you've lost your card or are  concerned that your card has been compromised, please chat to us via our chatbot to freeze your card and prevent any unauthorised payments. We will then assist you to complete a dispute investigation.`,
           }
         ]
       },
@@ -307,7 +291,7 @@ export const FAQDetails = [
           {
             question: `I forgot my passcode`,
             answer: `If you have forgotten your passcode to access the Revolut app, tap on ‘Forgot?’ in the login page of the app and follow the simple instructions to reset your passcode.
-            To be able to reset your passcode, your mobile phone number registered to your account needs to be in use and active. If you have since changed your mobile phone number, but have not updated it in your account, please contact us to do so.`,
+            To be able to reset your passcode, your mobile phone number registered to your account needs to be in use and active. If you have since changed your mobile phone number, but have not updated it in your account, please chat to us via our chat bot to do so.`,
           },
           {
             question: `Why is my account locked?`,
@@ -316,7 +300,7 @@ export const FAQDetails = [
           },
           {
             question: `I need to edit my personal details`,
-            answer: `If you’re unable to access your app and need to update your mobile phone number, please chat to us.`,
+            answer: `If you’re unable to access your app and need to update your mobile phone number, please chat to us via our chat bot to do so.`,
           },
         ]
       },

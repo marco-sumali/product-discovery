@@ -10,9 +10,9 @@ import NavigationBar from '../../components/header';
 import SearchedFAQs from './components/SearchedFAQs';
 import SearchInput from './components/SearchInput';
 import FAQs from './components/FAQs';
-import styles from './style.js';
 import {convertedFAQDetails} from './constant';
 import firebase from '../../config/firebase';
+import styles from './style.js';
 
 export default function FAQPage() {
   const db = firebase.firestore()

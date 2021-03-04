@@ -16,17 +16,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const theme = createMuiTheme({
-  overrides: {
-    MuiAppBar: {
-      colorPrimary: {
-        backgroundColor: '#F3F4F5',
-        color: '#000000',
-      },
-    },
-  },
-});
-
 function ElevationScroll(props) {
   const { children, window } = props;
   const trigger = useScrollTrigger({
@@ -42,6 +31,16 @@ function ElevationScroll(props) {
 
 const Header = ({children}) => {
   const classes = useStyles();
+  const theme = createMuiTheme({
+    overrides: {
+      MuiAppBar: {
+        colorPrimary: {
+          backgroundColor: window.location.pathname === '/faq' ? '#F3F4F5':'#ffffff',
+          color: '#000000',
+        },
+      },
+    },
+  });
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
@@ -49,7 +48,9 @@ const Header = ({children}) => {
         <ElevationScroll>
           <AppBar>
             <Toolbar>
-              <Typography variant="h6" className={classes.title}>R</Typography>
+              <Link to="/" style={{textDecoration: 'none', color: '#000000', flexGrow: '1'}}>
+                <Typography variant="h6" className={classes.title}>R</Typography>
+              </Link>
               <Link to="/faq" style={{textDecoration: 'none', color: '#000000'}}>
                 <Button color="inherit">FAQ</Button>
               </Link>

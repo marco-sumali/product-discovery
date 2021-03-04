@@ -1,7 +1,7 @@
 const Title = {
   fontWeight: '600',
   fontSize: '3rem',
-  margin: '32px 16px 0px 0px',
+  margin: '32px 0px 0px 0px',
   textAlign: 'center',
 }
 
