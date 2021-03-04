@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {
   AppBar,
@@ -9,8 +9,11 @@ import {
   Button,
 } from '@material-ui/core';
 import {createMuiTheme, ThemeProvider, makeStyles} from '@material-ui/core/styles';
+import {useDispatch} from 'react-redux';
 
-const useStyles = makeStyles((theme) => ({
+import {storeShowChatConnection} from '../../store/user/actions';
+
+const useStyles = makeStyles(() => ({
   title: {
     flexGrow: 1,
   },
@@ -31,19 +34,27 @@ function ElevationScroll(props) {
 
 const Header = ({
     children, 
-    showNavigation=true
+    showNavigation=true,
   }) => {
-    const classes = useStyles();
-    const theme = createMuiTheme({
-      overrides: {
-        MuiAppBar: {
-          colorPrimary: {
-            backgroundColor: window.location.pathname === '/faq' ? '#F3F4F5':'#ffffff',
-            color: '#000000',
-          },
+  const dispatch = useDispatch()
+  const classes = useStyles()
+  const theme = createMuiTheme({
+    overrides: {
+      MuiAppBar: {
+        colorPrimary: {
+          backgroundColor: window.location.pathname === '/faq' ? '#F3F4F5':'#ffffff',
+          color: '#000000',
         },
       },
-    });
+    },
+  });
+  const pathname = window.location.pathname
+
+  useEffect(() => {
+    if (pathname === '/faq' || pathname === '/') dispatch(storeShowChatConnection(true))
+    else dispatch(storeShowChatConnection(false))
+  }, [pathname])
+
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>

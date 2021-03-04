@@ -1,5 +1,3 @@
-import style from "../contact/style"
-
 const Box = {
   marginLeft: '64px',
   height: '80%',
