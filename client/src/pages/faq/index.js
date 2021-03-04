@@ -8,8 +8,8 @@ import {
   AccordionDetails,
   IconButton,
 } from '@material-ui/core'; 
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import {v4 as uuidv4} from 'uuid';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChatIcon from '@material-ui/icons/Chat';
 
 import NavigationBar from '../../components/header';
@@ -18,19 +18,42 @@ import {FAQDetails} from './constant';
 import firebase from '../../config/firebase';
 
 export default function FAQPage() {
+  const db = firebase.firestore()
+  const sessionCollection = "sessions"
+  const sessionId = uuidv4()
+  const [chatId, setChatId] = useState(sessionId)
   const [isConnected, setIsConnected] = useState(false)
+  const [agentMessages, setAgentMessages] = useState([])
 
   useEffect(() => {
-    const createSession = async () => {
-      const id = uuidv4()
-      const db = firebase.firestore();
-      db.collection("sessions").doc(id).set({
-        id: uuidv4(),
-        live_agent_id: uuidv4(),
+    const readingSessions = (chatId) => {
+      console.log('sessionId: reading', chatId)
+      db.collection(sessionCollection).doc(chatId)
+        .onSnapshot((doc) => {
+          const {responses} = doc.data()
+          console.log('doc:', doc.data())
+          const agentFilteredResponses = []
+          responses.map(response => {if (response.is_bot === true) agentFilteredResponses.unshift(response)})
+            setAgentMessages(agentFilteredResponses)
+        });
+    }
+
+    const createSession = () => {
+      const liveAgentId = uuidv4()
+      db.collection(sessionCollection).doc(chatId).set({
+        id: chatId,
+        live_agent_id: liveAgentId,
+        live_agent_auto_generate: true,
         responses: [],
         created_at: new Date(),
         updated_at: new Date(),
-      }).then(() => console.log('Successful session'))
+      })
+      .then(() => {
+        console.log('Successful session'); 
+        console.log('sessionId: creating', chatId)
+        readingSessions(chatId)
+      })
+      .catch(err => console.log('ERROR: new session', err))
     }
     
     setTimeout(() => {
@@ -39,12 +62,24 @@ export default function FAQPage() {
     }, 5000)
   }, [])
 
+  const openNewChatSession = () => {
+    console.log('sessionId: chat', chatId)
+    window.open(`https://articulo-voice-bot.web.app/chat/${chatId}`, '_blank')
+  }
+
   return (
     <NavigationBar>
       <Grid container style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
         <Grid item xs={12}>
+          {isConnected && agentMessages.length > 0? 
+            <div style={styles.MessageContainer}>
+              {agentMessages && agentMessages.map((message, index) => (
+                <div style={styles.Message} key={`message-${index}`}>{message.text}</div>
+              ))}
+            </div>
+          : null}
           {isConnected? 
-            <div style={styles.Button} onClick={() => window.location.href = 'https://articulo-voice-bot.web.app'}>
+            <div style={styles.Button} onClick={openNewChatSession}>
               <IconButton color="primary" style={{color: '#000000'}}>
                 <ChatIcon />
               </IconButton>
