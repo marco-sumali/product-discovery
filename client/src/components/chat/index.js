@@ -6,8 +6,11 @@ import {
 import {v4 as uuidv4} from 'uuid';
 import ChatIcon from '@material-ui/icons/Chat';
 
+import Ringtone from '../../assets/audio/iphone_sms_ringtones.mp3';
 import firebase from '../../config/firebase';
 import styles from './style.js';
+
+const ringtoneAudio = new Audio(Ringtone);
 
 const ChatIconAlert = () => {
   const db = firebase.firestore()
@@ -27,6 +30,7 @@ const ChatIconAlert = () => {
           const agentFilteredResponses = []
           responses.map(response => {if (response.is_bot === true) agentFilteredResponses.push(response)})
           setAgentMessages(agentFilteredResponses)
+          ringtoneAudio.play()
         });
     }
 
