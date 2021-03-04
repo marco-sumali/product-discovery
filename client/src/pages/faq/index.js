@@ -56,10 +56,10 @@ export default function FAQPage() {
       .catch(err => console.log('ERROR: new session', err))
     }
     
-    // setTimeout(() => {
-    //   createSession()
-    //   setIsConnected(prev => !prev)
-    // }, 5000)
+    setTimeout(() => {
+      createSession()
+      setIsConnected(prev => !prev)
+    }, 5000)
   }, [chatId])
 
   const openNewChatSession = () => {
