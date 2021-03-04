@@ -19,7 +19,7 @@ const SearchInput = {
 }
 
 const BodyContainer = {
-  padding: '16px',
+  padding: '8px 16px 16px 16px',
 }
 
 const Accordion = {

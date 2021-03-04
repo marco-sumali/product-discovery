@@ -19,7 +19,7 @@ const FAQs = ({
   const [FAQs, setFAQs] = useState(FAQDetails)
   return (
     <Container>
-      <Box my={3}>
+      <Box my={0}>
         <Grid item xs={12}>
           {search.length <= 0 && FAQs.map((faq, index) => (
             <div key={`FAQ-${index}`}>

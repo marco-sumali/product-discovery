@@ -94,7 +94,8 @@ export const FAQDetails = [
           },
           {
             question: `I have exceeded all my PIN attempts!`,
-            answer: `You can view or unblock your PIN anytime in the app. Simply head to the 'Cards' Tab, select the relevant card and then tap on 'PIN & Security' to view your options.`,
+            answer: `If you enter the PIN for your Revolut card incorrectly three times in a row, your card will be temporarily blocked to keep your card secure.
+            You can view or unblock your PIN anytime in the app. Simply head to the 'Cards' Tab, select the relevant card and then tap on 'PIN & Security' to view your options.`,
           },
           {
             question: `I want to change my card PIN`,
@@ -133,6 +134,49 @@ export const FAQDetails = [
             question: `Are my card details protected?`,
             answer: `Every time you pay using Apple Pay or Google Pay, your real card number isn’t sent to the merchant, which ensures your card details are kept safe and secure.`,
           },
+        ]
+      },
+      {
+        subtitle: 'Pay with Revolut',
+        data: [
+          {
+            question: `How do I dispute a Pay with Revolut transaction?`,
+            answer: `If you are dissatisfied with the product or service provided by the merchant, you can begin the process to dispute a transaction. To do this, please chat to us and state that you want to raise a Pay with Revolut claim.`,
+          }
+        ]
+      },
+      {
+        subtitle: 'Paying via direct debit',
+        data: [
+          {
+            question: `I don’t recognise a Direct Debit payment`,
+            answer: `If you wish to dispute a EUR Direct Debit transaction, you have the right to request an immediate refund within 8 weeks from the date your account was debited. If the mandate relating to the EUR Direct Debit transaction has not been authorised by you, you can request a refund up to 13 months after the date your account was debited. If you want to do this, please chat to us.`,
+          }
+        ]
+      },
+      {
+        subtitle: 'Paying by card',
+        data: [
+          {
+            question: `I don't recognise a card payment`,
+            answer: `If you're concerned that your card has been compromised, please freeze your card immediately in the app to prevent any unauthorised payments and check the following:
+            Did you make payments to this merchant in the past?
+            If you don't recognize the merchant’s name, please open the 'Transactions' list and search it there. This will show if there were any payments to this merchant in the past and should help you recall the merchant.
+            Have you ever provided your card details to this merchant?
+            If there were no previous payments to this merchant, try recalling if you ever provided your card details to them at any point.
+            For example, you linked the card as a payment method on a website, but never bought anything. Please contact the merchant to clarify the matter, this charge could be a mistake on their end.
+            Merchant's name and location might show differently
+            Sometimes the merchant's name shown in-app may not resemble their actual brand name. Also, the location doesn't have to be the actual place where the payment was made - it's often the merchant's headquarters.
+            The app shows only the information the merchant decided to provide. The details can be double-checked with a quick Google search.
+            Was the card used online or with a physical terminal? 
+            If you see that the card was used with a physical terminal and you have the card with you, the payment should have been done by you. Try recalling if you made a payment of a similar amount on that day.
+            For online payments, it's worth checking if somebody from your family or friends could have used your card details.
+            If you've made a payment with an offline POS terminal (such as on a flight or petrol station), it can occasionally take a few days or even weeks for these transactions to appear on your statement.
+            A merchant can also send a so-called 'delayed' payment, if for some reason they had trouble processing the transaction for the first time. In this case, the original payment may be reverted, and a 'delayed' payment charged instead.
+            If you still believe your card has been used fraudulently, please fill out our chargeback form so we can help with the issue.
+            If your card was lost or stolen, please report it as lost or stolen on the app or our website.
+            To dispute transactions made while the card was lost or stolen, please contact the local police and obtain a report before filling out our chargeback form. We'll need the police report to complete the chargeback process.`,
+          }
         ]
       },
       {
@@ -249,6 +293,30 @@ export const FAQDetails = [
             question: `Are the details of my linked account protected?`,
             answer: `We use TrueLayer to connect your Revolut app to your linked accounts. TrueLayer are regulated by the FCA (Financial Conduct Authority) and act as a messenger between Revolut and your other account providers.
             All of your details will always be encrypted and protected by high levels of security.`,
+          },
+        ]
+      },
+    ]
+  },
+  {
+    title: 'Profile Plan',
+    data: [
+      {
+        subtitle: 'Profile Settings',
+        data: [
+          {
+            question: `I forgot my passcode`,
+            answer: `If you have forgotten your passcode to access the Revolut app, tap on ‘Forgot?’ in the login page of the app and follow the simple instructions to reset your passcode.
+            To be able to reset your passcode, your mobile phone number registered to your account needs to be in use and active. If you have since changed your mobile phone number, but have not updated it in your account, please contact us to do so.`,
+          },
+          {
+            question: `Why is my account locked?`,
+            answer: `
+            We know that it can be frustrating to be denied access to your funds. Rest assured that we are doing everything in our power to finish the required checks and reinstate your account as soon as possible. Unfortunately, there is no specific timeframe that we can provide, the length of an investigation varies on a case to case basis.`,
+          },
+          {
+            question: `I need to edit my personal details`,
+            answer: `If you’re unable to access your app and need to update your mobile phone number, please chat to us.`,
           },
         ]
       },
