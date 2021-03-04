@@ -46,6 +46,12 @@ const AccordionTitle = {
   fontSize: '1.25em',
 }
 
+const AccordionTitleMin = {
+  fontWeight: '500',
+  fontSize: '1em',
+  marginBottom: '8px',
+}
+
 const AccordionSubTitle = {
   fontSize: '1em',
 }
@@ -96,6 +102,7 @@ const styles = {
   Button,
   MessageContainer,
   Message,
+  AccordionTitleMin,
 }
 
 export default styles;

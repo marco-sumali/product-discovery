@@ -1,0 +1,6 @@
+.AccordionGlobal :global {
+  color: aqua;
+  .MuiAccordionSummary-content {
+    flex-wrap: nowrap;
+  }
+}

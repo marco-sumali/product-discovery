@@ -255,3 +255,21 @@ export const FAQDetails = [
     ]
   },
 ]
+
+export const convertedFAQDetails = []
+FAQDetails.map(faq => {
+  faq.data.map(subFaq => {
+    subFaq.data.map(detail => {
+      const newDetail = {
+        title: faq.title,
+        subtitle: subFaq.subtitle,
+        question: detail.question,
+        answer: detail.answer,
+      }
+      convertedFAQDetails.push(newDetail)
+      return ''
+    })
+    return ''
+  })
+  return ''
+})
