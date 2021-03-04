@@ -29,18 +29,21 @@ function ElevationScroll(props) {
   });
 }
 
-const Header = ({children}) => {
-  const classes = useStyles();
-  const theme = createMuiTheme({
-    overrides: {
-      MuiAppBar: {
-        colorPrimary: {
-          backgroundColor: window.location.pathname === '/faq' ? '#F3F4F5':'#ffffff',
-          color: '#000000',
+const Header = ({
+    children, 
+    showNavigation=true
+  }) => {
+    const classes = useStyles();
+    const theme = createMuiTheme({
+      overrides: {
+        MuiAppBar: {
+          colorPrimary: {
+            backgroundColor: window.location.pathname === '/faq' ? '#F3F4F5':'#ffffff',
+            color: '#000000',
+          },
         },
       },
-    },
-  });
+    });
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
@@ -51,12 +54,16 @@ const Header = ({children}) => {
               <Link to="/" style={{textDecoration: 'none', color: '#000000', flexGrow: '1'}}>
                 <Typography variant="h6" className={classes.title}>R</Typography>
               </Link>
-              <Link to="/faq" style={{textDecoration: 'none', color: '#000000'}}>
-                <Button color="inherit">FAQ</Button>
-              </Link>
-              <Link to="/contact-us" style={{textDecoration: 'none', color: '#000000'}}>
-                <Button color="inherit">Contact Us</Button>
-              </Link>
+              {showNavigation ? 
+                <div>
+                  <Link to="/faq" style={{textDecoration: 'none', color: '#000000'}}>
+                    <Button color="inherit">FAQ</Button>
+                  </Link>
+                  <Link to="/contact-us" style={{textDecoration: 'none', color: '#000000'}}>
+                    <Button color="inherit">Contact Us</Button>
+                  </Link>
+                </div>
+              :null}
             </Toolbar>
           </AppBar>
         </ElevationScroll>
