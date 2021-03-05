@@ -19,18 +19,21 @@ const ChatIconAlert = () => {
   const [agentMessages, setAgentMessages] = useState([])
   const sessionId = useSelector(state => state.user.sessionId)
   const showChatConnection = useSelector(state => state.user.showChatConnection)
+  console.log('chatConnection:', showChatConnection)
 
   useEffect(() => {
     const readingSessions = (sessionId) => {
       console.log('sessionId: reading', sessionId)
       db.collection(sessionCollection).doc(sessionId)
         .onSnapshot((doc) => {
-          const {responses} = doc.data()
-          console.log('doc:', doc.data())
-          const agentFilteredResponses = []
-          responses.map(response => {if (response.is_bot === true) agentFilteredResponses.push(response)})
-          setAgentMessages(agentFilteredResponses)
-          // ringtoneAudio.play()
+          if (doc) {
+            const {responses} = doc.data()
+            console.log('doc:', doc.data())
+            const agentFilteredResponses = []
+            responses.map(response => {if (response.is_bot === true) agentFilteredResponses.push(response)})
+            setAgentMessages(agentFilteredResponses)
+            // ringtoneAudio.play()
+          }
         });
     }
 
@@ -52,13 +55,11 @@ const ChatIconAlert = () => {
       .catch(err => console.log('ERROR: new session', err))
     }
     
-    if (showChatConnection) {
-      setTimeout(() => {
-        createSession()
-        setIsConnected(prev => !prev)
-      }, 5000)
-    }
-  }, [sessionId, showChatConnection])
+    setTimeout(() => {
+      createSession()
+      setIsConnected(prev => !prev)
+    }, 3000)
+  }, [sessionId])
 
   const openNewChatSession = () => {
     console.log('sessionId: chat', sessionId)

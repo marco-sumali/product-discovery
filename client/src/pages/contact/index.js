@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {
   Container,
   Box,
@@ -11,6 +12,11 @@ import NavigationBar from '../../components/header';
 import styles from './style.js';
 
 const ContactUsPage = () => {
+  const sessionId = useSelector(state => state.user.sessionId)
+  const openNewChatSession = () => {
+    console.log('sessionId: chat', sessionId)
+    window.open(`https://articulo-voice-bot.web.app/chat/${sessionId}`, '_blank')
+  }
   return (
     <NavigationBar>
       <Grid container style={{backgroundColor: '#ffffff', minHeight: '100vh'}}>
@@ -22,7 +28,7 @@ const ContactUsPage = () => {
             </Grid>
             <Grid item xs={12} style={{marginTop: '7.5em'}}>
               <div style={styles.DisplayCenter}>
-                <div style={styles.Button} onClick={() => window.location.href = 'https://articulo-voice-bot.web.app'}>
+                <div style={styles.Button} onClick={openNewChatSession}>
                   <IconButton color="primary" style={{color: '#000000'}}>
                     <ChatIcon />
                   </IconButton>
