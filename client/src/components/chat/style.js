@@ -9,9 +9,19 @@ const Button = {
   backgroundColor: '#ffffff'
 }
 
+const FoldButton = {
+  position: 'fixed',
+  bottom: '96px',
+  right: '24px',
+  zIndex: '30',
+  borderRadius: '50%',
+  border: '2px solid rgb(139, 149, 158)',
+  backgroundColor: '#ffffff'
+}
+
 const MessageContainer = {
   position: 'fixed',
-  bottom: '104px',
+  bottom: '136px',
   right: '24px',
   zIndex: '30',
   display: 'flex',
@@ -35,6 +45,7 @@ const styles = {
   Button,
   MessageContainer,
   Message,
+  FoldButton,
 }
 
 
